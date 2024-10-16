@@ -4738,13 +4738,23 @@ a.close.disabled {
   max-height: calc(100% - 1rem); }
   .modal-dialog-scrollable .modal-content {
     max-height: calc(100vh - 1rem);
-    overflow: hidden; }
+    overflow: visible;
+    /* overflow: hidden; */
+
+   }
   .modal-dialog-scrollable .modal-header,
   .modal-dialog-scrollable .modal-footer {
     -ms-flex-negative: 0;
     flex-shrink: 0; }
-  .modal-dialog-scrollable .modal-body {
-    overflow-y: auto; }
+  /* .modal-dialog-scrollable .modal-body {
+    overflow-y: auto; } */
+    .modal-dialog-scrollable .modal-body {
+      max-height: calc(100vh - 150px); /* Adjust this value as needed */
+      overflow-y: auto;
+    }
+    .modal-header, .modal-footer {
+      touch-action: auto;
+    }
 
 .modal-dialog-centered {
   display: -webkit-box;

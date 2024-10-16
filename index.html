@@ -588,6 +588,39 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
+
+  <script>
+	document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
+    });
+});
+  </script>
+
+  <script>
+	let lastScrollTop = 0;
+const navbar = document.getElementById('ftco-navbar');
+
+window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scroll Down
+        navbar.style.top = '-80px'; // Adjust the height as per your navbar height
+    } else {
+        // Scroll Up
+        navbar.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
+});
+
+// Ensure scrolling works on mobile when the page is first opened
+document.body.style.overflow = 'auto';
+
+  </script>
     
   </body>
 </html>
