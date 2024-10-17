@@ -4749,13 +4749,25 @@ a.close.disabled {
     flex-shrink: 0; }
   /* .modal-dialog-scrollable .modal-body {
     overflow-y: auto; } */
-    .modal-dialog-scrollable .modal-body {
-      max-height: calc(100vh - 150px); /* Adjust this value as needed */
+    /* .modal-dialog-scrollable .modal-body {
+      max-height: calc(100vh - 150px); 
       overflow-y: auto;
-    }
+    } */
+    .modal-dialog-scrollable .modal-body {
+      max-height: calc(100vh - 100px); /* Adjust as needed for a better fit on mobile */
+      overflow-y: auto;
+  }
+  
     .modal-header, .modal-footer {
       touch-action: auto;
     }
+    @media (max-width: 768px) {
+      .modal-dialog-scrollable .modal-body {
+          max-height: calc(100vh - 80px); /* Adjust for mobile */
+          overflow-y: auto;
+      }
+  }
+  
 
 .modal-dialog-centered {
   display: -webkit-box;
